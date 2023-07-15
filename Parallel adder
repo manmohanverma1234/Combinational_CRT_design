@@ -1,0 +1,10 @@
+module pallel_adder(input logic [7:0]a,input logic clr,output logic [3:0]s);
+logic c,d,e,f,g,h,i,j,k;
+supply0 gnd;
+ha h1(a[0],a[1],clr,c,d);
+fa f1(a[2],a[3],a[4],clr,e,f);
+fa f2(a[5],a[6],a[7],clr,g,h); 
+bit_adder a2({e,f},{g,h},clr,{i,j,k});
+bit_adder_3 b2({gnd,c,d},{i,j,k},clr,s[3:0]);
+
+endmodule
