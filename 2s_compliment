@@ -1,0 +1,16 @@
+module compliment_2s(input logic mode,clr,input logic [3:0]a, output logic [4:0]y
+
+    );
+    logic c,d,e,f,g,h,i;
+    xor(c,mode,a[0]);
+    xor(d,mode,a[1]);
+    xor(e,mode,a[2]);
+    xor(f,mode,a[3]);
+    ha h1(mode,c,clr,g,y[0]);
+    ha h2(g,d,clr,h,y[1]);
+    ha h3(h,e,clr,i,y[2]);
+    ha h4(i,f,clr,y[4],y[3]);
+  
+    
+    
+endmodule
