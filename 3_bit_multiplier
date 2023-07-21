@@ -1,0 +1,18 @@
+module bit_3_multiplier(input logic [2:0]a,b,input logic clr,output logic [5:0]p
+
+    );
+    supply0 gnd;
+    logic c,d,f,g,h,i,j,k,l,m;
+    and(p[0],a[0],b[0]);
+    and(c,a[1],b[0]);
+    and(d,a[2],b[0]);
+    and(e,a[0],b[1]);
+    and(f,a[1],b[1]);
+    and(g,a[2],b[1]);
+    bit_adder_3 ad1({gnd,d,c},{g,f,e},clr,{j,i,h,p[1]});
+    and(k,a[0],b[2]);
+    and(l,a[1],b[2]);
+    and(m,a[2],b[2]);
+    bit_adder_3 ad2({j,i,h},{m,l,k},clr,p[5:2]);
+    
+endmodule
