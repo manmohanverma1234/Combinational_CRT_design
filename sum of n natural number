@@ -1,0 +1,15 @@
+module sum_of_n_numbers(input logic [3:0]n,input logic rst ,output logic [6:0]sum
+
+    );
+    logic c,d,e,f,g,h,i,j;
+    logic [7:0]y;
+     supply1 vcc; 
+     supply0 gnd;
+    ha h1(vcc,n[0],rst,c,d);
+    fa f1(gnd,n[1],c,rst,e,f); 
+    fa f2(gnd,n[2],e,rst,g,h);
+    fa f3(gnd,n[3],g,rst,i,j);
+    bit_4_multiplier m1(n[3:0],{j,h,f,d},rst,y[7:0]);
+    assign sum ={y[7],y[6],y[5],y[4],y[3],y[2],y[1]};
+    
+endmodule
