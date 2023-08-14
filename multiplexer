@@ -1,0 +1,12 @@
+module mux_4x1( input logic [3:0]a,input logic s1,s2,output logic y
+
+    );
+    logic w1,w2,w3,w4,w5,w6;
+    not(w1,s1);
+    not(w2,s2);
+    and(w3,a[0],w1,w2);
+    and(w4,a[1],w1,s2);
+    and(w5,a[2],s1,w2);
+    and(w6,a[3],s1,s2);
+    or(y,w3,w4,w5,w6);
+endmodule
