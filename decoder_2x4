@@ -1,0 +1,11 @@
+module decoder_2x4(input logic en,a,b,output logic [3:0]d
+
+    );
+    logic w1,w2;
+    not(w1,a); 
+    not(w2,b);
+    and(d[0],en,w1,w2);
+    and(d[1],en,w1,b);
+    and(d[2],en,a,w2);
+    and(d[3],en,a,b);
+endmodule
