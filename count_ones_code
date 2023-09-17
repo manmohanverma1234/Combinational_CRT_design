@@ -1,0 +1,18 @@
+module count_ones(input logic [4:0]a,input logic rst ,output logic [2:0]count
+);
+always_comb
+begin
+count=0;
+if(rst)
+ count=3'b0;
+ else
+ for(int i=0;i<=5;i=i+1)
+  begin
+  if(a[i]==1)
+    count=count+1;
+   
+   end
+
+end
+
+endmodule
